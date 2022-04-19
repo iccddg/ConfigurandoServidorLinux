@@ -34,7 +34,7 @@
                 <p>
                     sistema operativo elejido: Debian 11 <br>
                     iso descargado: Debian 11.3.0 netinst <br>
-                    el sistema se descaro de la pagina oficial de Debian: https://www.debian.org/download <br>
+                    el sistema se descaro de la pagina oficial de Debian: <a href="https://www.debian.org/download"> https://www.debian.org/download </a><br>
                 </p>
             </div>
         </section>
@@ -44,22 +44,45 @@
                     Instalacion
                 </h2>
                 <h3>
-                    Creacion del medio de instalacion
-                </h3>
-                <p>
-                    Se utilizo UltraISO en su version de prueba para crear el medio de instalacion del sistema operativo, 
-                    abriendo la imagen iso descargada con el programa y creando la USB arrancable con la opcion de "Bootable" 
-                    "Write disk image", se eligio la USB correcta, se dio formato a la memoria, (en lo particular siempore 
-                    formateo la USB) y despues se elijió la opcion "Write" <br>
-                </p>
-                <h3>
                     Creacion y configuracion de la maquina virtual
                 </h3>
                 <p>
                     Se elijio la opcion "Nueva" en VirtualBox, se le asigno un nombre a la maquina virtual, este nombre 
                     es solo para identificarla en VirtualBox, despues se elijio la ubicacion de la maquina virtual, 
                     tipo: Linux, version: Debian 64 bits, el tipo de discuduro fue VirtualBox con almacenamiento 
-                    dinamico, tamaño maximo 15 GB <br>
+                    dinamico, tamaño maximo 15 GB. Antes de iniciar se configuro el medio de arranque, seleccionando la 
+                    maquina creada en VirtualBox y elijiendo la opcion almacenamiento, y en la unidad de CD virtual, en la seccion "Atributos" se
+                    dio clic en el icono de CD para buscar y elegir la imagen iso desacargada con el sistema operativo Debian.
+                </p>
+                <h3>
+                    Instalacion del sistema operativo Debian
+                </h3>
+                <p>
+                    Se encendio la maquina virtual en la opcoin iniciar de VirtualBox, al arrancar del ISO, en el asistente
+                    se eligio el instalador sin interfas grafica y se configuro de la siguiente manera:
+                </p>
+                <ul>
+                    <li>Lenguaje: Español</li>
+                    <li>País: México</li>
+                    <li>Teclado: Latinoamericano</li>
+                    <li>Nombre del eqipo: ServidorPruebasDebian</li>
+                    <li>Nombre de dominio: probicional</li>
+                    <li>contraseña root: miclave321</li>
+                    <li>Usuario: usuario</li>
+                    <li>Contraseña de usuario: miclave1</li>
+                    <li>zona horaria: Pacifico</li>
+                    <li>Particionado: Guiado utilizar todo el disco</li>
+                    <li>Disco: el unico disco de la maquina virtual</li>
+                    <li>Esquema: Todos los ficheros en una partición</li>
+                    <li>País de réplica de Debian: Estados Unidos</li>
+                    <li>Réplica de Debian: deb.debian.org</li>
+                    <li>Proxi: en blanco</li>
+                    <li>Selección de Programas: Utilidades estándar del sistema (solamente)</li>
+                    <li>Cargador de arranque: GRUB</li>
+                </ul>
+                <p>
+                    Durante la instalacion solicitó analizar medios de instalacion adicionales, se seleccionó que no, tambien solicitó 
+                    elegir un medio de almacenameinto para el cargador de arranque, se selecciono el disco duro de la maquina virtual.
                 </p>
             </div>
         </section>
