@@ -17,13 +17,27 @@
 </head>
 <body>
     <header>
-
+        <div class="container">
+            <a href="index.html">
+                <img src="Img/favicon.png" class="logo" alt="Logo">
+            </a>
+            <nav>
+                <a href="#entorno">Entorno</a>
+                <a href="#instalacion">Instalación</a>
+                <a href="#repositoriosSistema">Repositorios del sistema</a>
+                <a href="#configuracionUsuarios">Configuración de usuarios</a>
+                <a href="#instalacionApacheWebServer">Instalación de Apache Web Serber</a>
+            </nav>
+        </div>
     </header>
-    <body>
-        <section id="introduccion">
-            <div>
+    <main>
+        <section id="entorno" class="fondoRosa">
+            <div class="container">
                 <h1>
+                    <br>
                     Configurando un servidor Linux
+                    <br>
+                    <br>
                 </h1>
                 <h2>Entorno</h2>
                 <p>
@@ -38,9 +52,12 @@
                 </p>
             </div>
         </section>
-        <section id="Instalación">
-            <div>
+        <section id="instalacion"class="fondoAguaMarina">
+            <div class="container">
                 <h2>
+                    <br>
+                    <br>
+                    <br>
                     Instalacion
                 </h2>
                 <h3>
@@ -86,13 +103,16 @@
                 </p>
             </div>
         </section>
-        <section id="Repositorios del sistema">
-            <div>
+        <section id="repositoriosSistema"class="fondoRosa">
+            <div class="container">
                 <h2>
+                    <br>
+                    <br>
+                    <br>
                     Repositorios del sistema
                 </h2>
                 <p>
-                    Para favorecer la estabilidad el sistema se configuro el sistema de paquetes de debian
+                    Para favorecer la estabilidad el sistema se configuró el sistema de paquetes de debian
                     para utilizar paquetes de la rama estable, aunque se incluyen tambien los paquetes estables
                     que son contribuciones de la comunidad que no esta directamente con debian y paquetes que 
                     utilizan software que no tiene licencia completamente libre. esta configuracion se realiza
@@ -115,9 +135,12 @@
                 </pre>
             </div>
         </section>
-        <section id="Configuracion de usuarios">
-            <div>
+        <section id="configuracionUsuarios"class="fondoAguaMarina">
+            <div class="container">
                 <h2>
+                    <br>
+                    <br>
+                    <br>
                     Configuracion de usuarios
                 </h2>
                 <p>
@@ -126,9 +149,9 @@
 
                     primero utilizamos el siguiente comando para logearnos como root: 
                 </p>
-                    <pre>
-                        su root
-                    </pre>
+                    <p class="comando">
+                    su root
+                    </p>
                 <p>
                     Nos pedira la contraseña, se escribe aunque paresca que no esta escribiendo, teniendo cuidado de 
                     encender el bloque numerico del teclado si la contraseña lleva numeros
@@ -137,23 +160,23 @@
                     Colocamos el siguiente comando para actualizar y descargar los paquetes de nuestro sistema operativo, si 
                     nos arroja que tenemos actualizaciones disponibles, las descargamos con el comando siguiente:
                 </p>
-                <pre>
-                    apt-get update
+                <p class="comando">
+                    apt-get update <br>
                     apt-get upgrade
-                </pre>
+                </p>
                 <p>
                     Ahora instalamos el paquete sudo con el siguiente comando
                 </p>
-                <pre>
+                <p class="comando">
                     apt-get install sudo
-                </pre>
+                </p>
                 <p>
                     Una vez instalado, procedemos a configurar el archivo /etc/sudoers para dar permiso a nuestro usuario creado durante
                     la instalacion de poder realizar tareas administrativas en el sistema, esto lo hacemos con el siguiente comando:
                 </p>
-                <pre>
+                <p class="comando">
                     nano /etc/sudoers
-                </pre>
+                </p>
                 <p>
                     se agrega la siguiente linea:
                 </p>
@@ -167,17 +190,19 @@
                 </p>
             </div>
         </section>
-        <section id="Instalacion de ApacheWebServer">
-            <div>
+        <section id="instalacionApacheWebServer"class="fondoRosa">
+            <div class="container">
                 <h2>
+                    <br>
+                    <br>
+                    <br>
                     Instalacion de Apache Web Server
                 </h2>
             </div>
         </section>
-    </body>
-    <footer>
+    </main>
+        <footer>
 
-    </footer>
-    
+        </footer>
 </body>
 </html>

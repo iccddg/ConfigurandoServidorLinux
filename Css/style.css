@@ -1,6 +1,82 @@
+*{
+    box-sizing: border-box;
+}
+
 body {
     font-family: "Roboto";
 }
-section{
-    margin: 15px;
+header{
+    padding: 0 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    background-color: #FFDEAD;
+}
+header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+header .container .logo{
+    width: 50px;
+}
+header .container a{
+    color: rgb(215, 10, 83);
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight:bold;
+}
+h1{
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 30px;
+}
+h2{
+    margin: 0 auto;
+}
+p{
+    margin-bottom: 0;
+}
+p.comando{
+    background-color: black;
+    border: solid;
+    font-weight: 600;
+    color: white;
+    padding: 10px 10px;
+    margin-left:  50px;
+    margin-right: 50px;
+}
+p.comando br{
+    margin-bottom: 15px;
+}
+pre{
+    background-color: white;
+    border: solid;
+    font-weight: 500;
+    color: black;
+    padding: 10px; 
+    padding-bottom: 0px;
+    margin-left:  50px;
+    margin-right: 50px;
+    margin-bottom: 0;
+}
+a{
+    display: inline-block;
+}
+.container{
+    width: 1140px;
+    margin: 0 auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    position: relative;
+}
+.fondoRosa{
+    background-color: #ce79b1;
+}
+.fondoAguaMarina{
+    background-color: #66adaa;
 }
