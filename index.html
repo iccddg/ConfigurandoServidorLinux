@@ -86,7 +86,94 @@
                 </p>
             </div>
         </section>
-                
+        <section id="Repositorios del sistema">
+            <div>
+                <h2>
+                    Repositorios del sistema
+                </h2>
+                <p>
+                    Para favorecer la estabilidad el sistema se configuro el sistema de paquetes de debian
+                    para utilizar paquetes de la rama estable, aunque se incluyen tambien los paquetes estables
+                    que son contribuciones de la comunidad que no esta directamente con debian y paquetes que 
+                    utilizan software que no tiene licencia completamente libre. esta configuracion se realiza
+                    modificando el archivo /etc/apt/sources.list, para lo cual se utilizo el editor nano.
+                </p>
+                <pre>                 
+                    ## Debian mirror
+                    
+                    # Base repository
+                    deb https://deb.debian.org/debian/ bullseye main contrib non-free
+                    deb-src https://deb.debian.org/debian/ bullseye main contrib non-free
+                    
+                    # Security updates
+                    deb http://security.debian.org/debian-security bullseye-security main contrib non-free
+                    deb-src http://security.debian.org/debian-security bullseye-security main contrib non-free
+
+                    # Stable updates
+                    deb https://deb.debian.org/debian/ bullseye-updates main contrib non-free
+                    deb-src https://deb.debian.org/debian/ bullseye-updates main contrib non-free
+                </pre>
+            </div>
+        </section>
+        <section id="Configuracion de usuarios">
+            <div>
+                <h2>
+                    Configuracion de usuarios
+                </h2>
+                <p>
+                    Para poder realizar tareas administrativas con el usuario creado durante la instalacion del sistema operativo
+                    se utiliza el programa "sudo"
+
+                    primero utilizamos el siguiente comando para logearnos como root: 
+                </p>
+                    <pre>
+                        su root
+                    </pre>
+                <p>
+                    Nos pedira la contraseña, se escribe aunque paresca que no esta escribiendo, teniendo cuidado de 
+                    encender el bloque numerico del teclado si la contraseña lleva numeros
+                </p>
+                <p>
+                    Colocamos el siguiente comando para actualizar y descargar los paquetes de nuestro sistema operativo, si 
+                    nos arroja que tenemos actualizaciones disponibles, las descargamos con el comando siguiente:
+                </p>
+                <pre>
+                    apt-get update
+                    apt-get upgrade
+                </pre>
+                <p>
+                    Ahora instalamos el paquete sudo con el siguiente comando
+                </p>
+                <pre>
+                    apt-get install sudo
+                </pre>
+                <p>
+                    Una vez instalado, procedemos a configurar el archivo /etc/sudoers para dar permiso a nuestro usuario creado durante
+                    la instalacion de poder realizar tareas administrativas en el sistema, esto lo hacemos con el siguiente comando:
+                </p>
+                <pre>
+                    nano /etc/sudoers
+                </pre>
+                <p>
+                    se agrega la siguiente linea:
+                </p>
+                <pre>
+                    usuario All(ALL:All) ALL
+                </pre>
+                <p>
+                    Ahora cuando necesitemos realizar cualquier tarea con nuestro usuario nos bastara con poner la palabra sudo antes del
+                    comando a ejecutar, nos pedira nuestra contraseña y listo. para cambiar de usuario utilizamos su y el nombre del usuario
+                    con el que necesitamos iniciar secion.
+                </p>
+            </div>
+        </section>
+        <section id="Instalacion de ApacheWebServer">
+            <div>
+                <h2>
+                    Instalacion de Apache Web Server
+                </h2>
+            </div>
+        </section>
     </body>
     <footer>
 
