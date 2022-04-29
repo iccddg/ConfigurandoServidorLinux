@@ -26,6 +26,7 @@
                 <a href="#instalacion">Instalación</a>
                 <a href="#repositoriosSistema">Repositorios del sistema</a>
                 <a href="#configuracionUsuarios">Configuración de usuarios</a>
+                <a href="#instalacionSsh">Instalación Ssh</a>
                 <a href="#instalacionApacheWebServer">Instalación de Apache Web Serber</a>
             </nav>
         </div>
@@ -58,7 +59,7 @@
                     <br>
                     <br>
                     <br>
-                    Instalacion
+                    Instalacion Debian 11
                 </h2>
                 <h3>
                     Creacion y configuracion de la maquina virtual
@@ -84,9 +85,9 @@
                     <li>Teclado: Latinoamericano</li>
                     <li>Nombre del eqipo: ServidorPruebasDebian</li>
                     <li>Nombre de dominio: probicional</li>
-                    <li>contraseña root: miclave321</li>
-                    <li>Usuario: usuario</li>
-                    <li>Contraseña de usuario: miclave1</li>
+                    <li>contraseña root: ********</li>
+                    <li>Usuario: ********</li>
+                    <li>Contraseña de usuario: ********</li>
                     <li>zona horaria: Pacifico</li>
                     <li>Particionado: Guiado utilizar todo el disco</li>
                     <li>Disco: el unico disco de la maquina virtual</li>
@@ -118,21 +119,9 @@
                     utilizan software que no tiene licencia completamente libre. esta configuracion se realiza
                     modificando el archivo /etc/apt/sources.list, para lo cual se utilizo el editor nano.
                 </p>
-                <pre>                 
-                    ## Debian mirror
-                    
-                    # Base repository
-                    deb https://deb.debian.org/debian/ bullseye main contrib non-free
-                    deb-src https://deb.debian.org/debian/ bullseye main contrib non-free
-                    
-                    # Security updates
-                    deb http://security.debian.org/debian-security bullseye-security main contrib non-free
-                    deb-src http://security.debian.org/debian-security bullseye-security main contrib non-free
-
-                    # Stable updates
-                    deb https://deb.debian.org/debian/ bullseye-updates main contrib non-free
-                    deb-src https://deb.debian.org/debian/ bullseye-updates main contrib non-free
-                </pre>
+                <p>
+                    <img src="Img/sources.png" alt="imagen con lista de fuentes del sistema">
+                </p>
             </div>
         </section>
         <section id="configuracionUsuarios"class="fondoAguaMarina">
@@ -190,7 +179,48 @@
                 </p>
             </div>
         </section>
-        <section id="instalacionApacheWebServer"class="fondoRosa">
+        <section id="instalacionSsh"class="fondoRosa">
+            <div class="container">
+                <h2>
+                    <br>
+                    <br>
+                    <br>
+                    Instalacion Ssh
+                </h2>
+                <p>
+                    El protocolo SSH obtinen su nombre del acrónimo SecureSHell y concieste en un protocolo de comunicacíon que 
+                    encripta los datos que se intercambian. Instalamos el servidor con el siguiente comando:
+                </p>
+                <p class="comando">
+                    sudo apt install openssh-server openssh-client
+                </p>
+                <p>
+                    para configurar el servidor ssh modificamos el archivo de configuracion con el siguiente comando:
+                </p>
+                <p class="comando">
+                    sudo nano /etc/ssh/sshd_config
+                </p>
+                <p>
+                    Indicamos las direcciones IP donde el servicio va a escuchar y responder, en este caso son conexiones ligadas
+                    a la direccion 192.168.1.xx, a través del puerto 22 y utilizando la version 2 del protocolo ssh:
+                </p>
+                <p>
+                    <img src="img/ssh_configuracion.png" alt="imagen del archivo de configuracion ssh">
+                </p>
+                <p>
+                    Para que el servidor ssh tome los cambios en la configuracion lo reiniciamos con el siguiene comando:
+                </p>
+                <p class="comando">
+                    sudo systemctl restar ssh
+                </p>
+                <p>
+                    Fuentes: <br>
+                    <cite>https://servidordebian.org/es/buster/config/remote_access/ssh_protocol</cite><br>
+                    <cite>Fuentes: https://servidordebian.org/es/buster/config/remote_access/ssh_protocol</cite>
+                </p>
+            </div>
+        </section>
+        <section id="instalacionApacheWebServer"class="fondoAguaMarina">
             <div class="container">
                 <h2>
                     <br>
@@ -198,6 +228,8 @@
                     <br>
                     Instalacion de Apache Web Server
                 </h2>
+                <p>
+                </p>
             </div>
         </section>
     </main>

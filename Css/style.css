@@ -67,6 +67,9 @@ pre{
 a{
     display: inline-block;
 }
+nav a{
+    font-size: 12px;
+}
 .container{
     width: 1140px;
     margin: 0 auto;
