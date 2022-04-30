@@ -27,6 +27,7 @@
                 <a href="#repositoriosSistema">Repositorios del sistema</a>
                 <a href="#configuracionUsuarios">Configuración de usuarios</a>
                 <a href="#instalacionSsh">Instalación Ssh</a>
+                <a href="#instalacionFireWallBasico">Instalación FireWell basico</a>
                 <a href="#instalacionApacheWebServer">Instalación de Apache Web Serber</a>
             </nav>
         </div>
@@ -120,7 +121,7 @@
                     modificando el archivo /etc/apt/sources.list, para lo cual se utilizo el editor nano.
                 </p>
                 <p>
-                    <img src="Img/sources.png" alt="imagen con lista de fuentes del sistema">
+                    <img src="Img/sources.png" alt="imagen con lista de fuentes del sistema"style="margin-left: 50px;">
                 </p>
             </div>
         </section>
@@ -205,7 +206,7 @@
                     a la direccion 192.168.1.xx, a través del puerto 22 y utilizando la version 2 del protocolo ssh:
                 </p>
                 <p>
-                    <img src="img/ssh_configuracion.png" alt="imagen del archivo de configuracion ssh">
+                    <img src="img/ssh_configuracion.png" alt="imagen del archivo de configuracion ssh"style="margin-left: 50px;">
                 </p>
                 <p>
                     Para que el servidor ssh tome los cambios en la configuracion lo reiniciamos con el siguiene comando:
@@ -214,9 +215,58 @@
                     sudo systemctl restar ssh
                 </p>
                 <p>
+                    Una vez configurado nuestro servidor SSH vamos a habilitarlo para que se arranque automaticamente cada que reiniciemos nuestro
+                    servidor, esto lo hacemos con el siguente comando:
+                </p>
+                <p class="comando">
+                    sudo systemctl eneable ssh
+                </p>
+                <p>
+                    para asegurarnos que nuestro servirdor ssh arranque con cada reinicio del sistema agregamos una tarea con cron, 
+                    primero agregamos un archivo cron como root con el siguiente comando:
+                </p>
+                <p class="comando">
+                    crontab -e
+                </p>
+                <p>
+                    y en el archivo agregamos la siguiente linea
+                </p>
+                <p>
+                    <img src="Img/crontabSSH.png" alt="archivo de configuracion cron"style="margin-left: 50px;">
+                </p>
+                <p>
                     Fuentes: <br>
+                    <div style="margin-left: 50px;">
                     <cite>https://servidordebian.org/es/buster/config/remote_access/ssh_protocol</cite><br>
-                    <cite>Fuentes: https://servidordebian.org/es/buster/config/remote_access/ssh_protocol</cite>
+                    <cite>https://www.digitalocean.com/community/tutorials/how-to-use-systemctl-to-manage-systemd-services-and-units-es</cite><br>
+                    <cite>https://www.desarrollo-web-br-bd.com/es/ssh/como-iniciar-ssh-daemon-en-el-arranque-en-linux-mint-debian-v2/960848214/</cite><br>
+                    <cite>https://www.linuxcompatible.org/story/crontab-in-debian-10/</cite><br>
+                    <cite>https://linuxhint.com/crontab_in_linux/</cite><br>
+                    <cite>https://www.solvetic.com/tutoriales/article/7480-como-saber-cuando-se-apago-o-reinicio-un-servidor-linux/</cite><br>
+                    </div>
+                </p>
+            </div>
+        </section>
+        <section id="instalacionFireWallBasico"class="fondoAguaMarina">
+            <div class="container">
+                <h2>
+                    <br>
+                    <br>
+                    <br>
+                    Instalacion de un FireWall basico
+                </h2>
+                <p>
+                    Instalamos un FireWall basico para asegurarnos que solo ciertas conexiones a servicios especificos sean permitidas
+                    para esto ejecutamos los siguientes comandos como administrador:
+                </p>
+                <p class="comando">
+                    sudo apt-get update <br>
+                    sudo apt-get install ufw
+                </p>
+                <p>
+                    Fuentes: <br>
+                    <cite>https://www.digitalocean.com/community/tutorials/initial-server-setup-with-debian-10</cite><br>
+
                 </p>
             </div>
         </section>
