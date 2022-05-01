@@ -17,274 +17,29 @@
 </head>
 <body>
     <header>
-        <div class="container">
-            <a href="index.html">
-                <img src="Img/favicon.png" class="logo" alt="Logo">
-            </a>
-            <nav>
-                <a href="#entorno">Entorno</a>
-                <a href="#instalacion">Instalación</a>
-                <a href="#repositoriosSistema">Repositorios del sistema</a>
-                <a href="#configuracionUsuarios">Configuración de usuarios</a>
-                <a href="#instalacionSsh">Instalación Ssh</a>
-                <a href="#instalacionFireWallBasico">Instalación FireWell basico</a>
-                <a href="#instalacionApacheWebServer">Instalación de Apache Web Serber</a>
-            </nav>
+        <div>
+            <p>Encabezado</p>
         </div>
     </header>
-    <main>
-        <section id="entorno" class="fondoRosa">
-            <div class="container">
-                <h1>
-                    <br>
-                    Configurando un servidor Linux
-                    <br>
-                    <br>
-                </h1>
-                <h2>Entorno</h2>
-                <p>
-                    Maquina virtual en VirtualBox 6.1.32 sobre Windows 10<br>
-                    Discro Virtual: 15 GB <br>
-                    Memoria RAM: 1 GB <br>
-                </p>
-                <p>
-                    sistema operativo elejido: Debian 11 <br>
-                    iso descargado: Debian 11.3.0 netinst <br>
-                    el sistema se descaro de la pagina oficial de Debian: <a href="https://www.debian.org/download"> https://www.debian.org/download </a><br>
-                </p>
-            </div>
-        </section>
-        <section id="instalacion"class="fondoAguaMarina">
-            <div class="container">
-                <h2>
-                    <br>
-                    <br>
-                    <br>
-                    Instalacion Debian 11
-                </h2>
-                <h3>
-                    Creacion y configuracion de la maquina virtual
-                </h3>
-                <p>
-                    Se elijio la opcion "Nueva" en VirtualBox, se le asigno un nombre a la maquina virtual, este nombre 
-                    es solo para identificarla en VirtualBox, despues se elijio la ubicacion de la maquina virtual, 
-                    tipo: Linux, version: Debian 64 bits, el tipo de discuduro fue VirtualBox con almacenamiento 
-                    dinamico, tamaño maximo 15 GB. Antes de iniciar se configuro el medio de arranque, seleccionando la 
-                    maquina creada en VirtualBox y elijiendo la opcion almacenamiento, y en la unidad de CD virtual, en la seccion "Atributos" se
-                    dio clic en el icono de CD para buscar y elegir la imagen iso desacargada con el sistema operativo Debian.
-                </p>
-                <h3>
-                    Instalacion del sistema operativo Debian
-                </h3>
-                <p>
-                    Se encendio la maquina virtual en la opcoin iniciar de VirtualBox, al arrancar del ISO, en el asistente
-                    se eligio el instalador sin interfas grafica y se configuro de la siguiente manera:
-                </p>
-                <ul>
-                    <li>Lenguaje: Español</li>
-                    <li>País: México</li>
-                    <li>Teclado: Latinoamericano</li>
-                    <li>Nombre del eqipo: ServidorPruebasDebian</li>
-                    <li>Nombre de dominio: probicional</li>
-                    <li>contraseña root: ********</li>
-                    <li>Usuario: ********</li>
-                    <li>Contraseña de usuario: ********</li>
-                    <li>zona horaria: Pacifico</li>
-                    <li>Particionado: Guiado utilizar todo el disco</li>
-                    <li>Disco: el unico disco de la maquina virtual</li>
-                    <li>Esquema: Todos los ficheros en una partición</li>
-                    <li>País de réplica de Debian: Estados Unidos</li>
-                    <li>Réplica de Debian: deb.debian.org</li>
-                    <li>Proxi: en blanco</li>
-                    <li>Selección de Programas: Utilidades estándar del sistema (solamente)</li>
-                    <li>Cargador de arranque: GRUB</li>
-                </ul>
-                <p>
-                    Durante la instalacion solicitó analizar medios de instalacion adicionales, se seleccionó que no, tambien solicitó 
-                    elegir un medio de almacenameinto para el cargador de arranque, se selecciono el disco duro de la maquina virtual.
-                </p>
-            </div>
-        </section>
-        <section id="repositoriosSistema"class="fondoRosa">
-            <div class="container">
-                <h2>
-                    <br>
-                    <br>
-                    <br>
-                    Repositorios del sistema
-                </h2>
-                <p>
-                    Para favorecer la estabilidad el sistema se configuró el sistema de paquetes de debian
-                    para utilizar paquetes de la rama estable, aunque se incluyen tambien los paquetes estables
-                    que son contribuciones de la comunidad que no esta directamente con debian y paquetes que 
-                    utilizan software que no tiene licencia completamente libre. esta configuracion se realiza
-                    modificando el archivo /etc/apt/sources.list, para lo cual se utilizo el editor nano.
-                </p>
-                <p>
-                    <img src="Img/sources.png" alt="imagen con lista de fuentes del sistema"style="margin-left: 50px;">
-                </p>
-            </div>
-        </section>
-        <section id="configuracionUsuarios"class="fondoAguaMarina">
-            <div class="container">
-                <h2>
-                    <br>
-                    <br>
-                    <br>
-                    Configuracion de usuarios
-                </h2>
-                <p>
-                    Para poder realizar tareas administrativas con el usuario creado durante la instalacion del sistema operativo
-                    se utiliza el programa "sudo"
-
-                    primero utilizamos el siguiente comando para logearnos como root: 
-                </p>
-                    <p class="comando">
-                    su root
-                    </p>
-                <p>
-                    Nos pedira la contraseña, se escribe aunque paresca que no esta escribiendo, teniendo cuidado de 
-                    encender el bloque numerico del teclado si la contraseña lleva numeros
-                </p>
-                <p>
-                    Colocamos el siguiente comando para actualizar y descargar los paquetes de nuestro sistema operativo, si 
-                    nos arroja que tenemos actualizaciones disponibles, las descargamos con el comando siguiente:
-                </p>
-                <p class="comando">
-                    apt-get update <br>
-                    apt-get upgrade
-                </p>
-                <p>
-                    Ahora instalamos el paquete sudo con el siguiente comando
-                </p>
-                <p class="comando">
-                    apt-get install sudo
-                </p>
-                <p>
-                    Una vez instalado, procedemos a configurar el archivo /etc/sudoers para dar permiso a nuestro usuario creado durante
-                    la instalacion de poder realizar tareas administrativas en el sistema, esto lo hacemos con el siguiente comando:
-                </p>
-                <p class="comando">
-                    nano /etc/sudoers
-                </p>
-                <p>
-                    se agrega la siguiente linea:
-                </p>
-                <pre>
-                    usuario All(ALL:All) ALL
-                </pre>
-                <p>
-                    Ahora cuando necesitemos realizar cualquier tarea con nuestro usuario nos bastara con poner la palabra sudo antes del
-                    comando a ejecutar, nos pedira nuestra contraseña y listo. para cambiar de usuario utilizamos su y el nombre del usuario
-                    con el que necesitamos iniciar secion.
-                </p>
-            </div>
-        </section>
-        <section id="instalacionSsh"class="fondoRosa">
-            <div class="container">
-                <h2>
-                    <br>
-                    <br>
-                    <br>
-                    Instalacion Ssh
-                </h2>
-                <p>
-                    El protocolo SSH obtinen su nombre del acrónimo SecureSHell y concieste en un protocolo de comunicacíon que 
-                    encripta los datos que se intercambian. Instalamos el servidor con el siguiente comando:
-                </p>
-                <p class="comando">
-                    sudo apt install openssh-server openssh-client
-                </p>
-                <p>
-                    para configurar el servidor ssh modificamos el archivo de configuracion con el siguiente comando:
-                </p>
-                <p class="comando">
-                    sudo nano /etc/ssh/sshd_config
-                </p>
-                <p>
-                    Indicamos las direcciones IP donde el servicio va a escuchar y responder, en este caso son conexiones ligadas
-                    a la direccion 192.168.1.xx, a través del puerto 22 y utilizando la version 2 del protocolo ssh:
-                </p>
-                <p>
-                    <img src="img/ssh_configuracion.png" alt="imagen del archivo de configuracion ssh"style="margin-left: 50px;">
-                </p>
-                <p>
-                    Para que el servidor ssh tome los cambios en la configuracion lo reiniciamos con el siguiene comando:
-                </p>
-                <p class="comando">
-                    sudo systemctl restar ssh
-                </p>
-                <p>
-                    Una vez configurado nuestro servidor SSH vamos a habilitarlo para que se arranque automaticamente cada que reiniciemos nuestro
-                    servidor, esto lo hacemos con el siguente comando:
-                </p>
-                <p class="comando">
-                    sudo systemctl eneable ssh
-                </p>
-                <p>
-                    para asegurarnos que nuestro servirdor ssh arranque con cada reinicio del sistema agregamos una tarea con cron, 
-                    primero agregamos un archivo cron como root con el siguiente comando:
-                </p>
-                <p class="comando">
-                    crontab -e
-                </p>
-                <p>
-                    y en el archivo agregamos la siguiente linea
-                </p>
-                <p>
-                    <img src="Img/crontabSSH.png" alt="archivo de configuracion cron"style="margin-left: 50px;">
-                </p>
-                <p>
-                    Fuentes: <br>
-                    <div style="margin-left: 50px;">
-                    <cite>https://servidordebian.org/es/buster/config/remote_access/ssh_protocol</cite><br>
-                    <cite>https://www.digitalocean.com/community/tutorials/how-to-use-systemctl-to-manage-systemd-services-and-units-es</cite><br>
-                    <cite>https://www.desarrollo-web-br-bd.com/es/ssh/como-iniciar-ssh-daemon-en-el-arranque-en-linux-mint-debian-v2/960848214/</cite><br>
-                    <cite>https://www.linuxcompatible.org/story/crontab-in-debian-10/</cite><br>
-                    <cite>https://linuxhint.com/crontab_in_linux/</cite><br>
-                    <cite>https://www.solvetic.com/tutoriales/article/7480-como-saber-cuando-se-apago-o-reinicio-un-servidor-linux/</cite><br>
-                    </div>
-                </p>
-            </div>
-        </section>
-        <section id="instalacionFireWallBasico"class="fondoAguaMarina">
-            <div class="container">
-                <h2>
-                    <br>
-                    <br>
-                    <br>
-                    Instalacion de un FireWall basico
-                </h2>
-                <p>
-                    Instalamos un FireWall basico para asegurarnos que solo ciertas conexiones a servicios especificos sean permitidas
-                    para esto ejecutamos los siguientes comandos como administrador:
-                </p>
-                <p class="comando">
-                    sudo apt-get update <br>
-                    sudo apt-get install ufw
-                </p>
-                <p>
-                    Fuentes: <br>
-                    <cite>https://www.digitalocean.com/community/tutorials/initial-server-setup-with-debian-10</cite><br>
-
-                </p>
-            </div>
-        </section>
-        <section id="instalacionApacheWebServer"class="fondoAguaMarina">
-            <div class="container">
-                <h2>
-                    <br>
-                    <br>
-                    <br>
-                    Instalacion de Apache Web Server
-                </h2>
-                <p>
-                </p>
-            </div>
-        </section>
+    <main class="flex">
+        <div id="indice">
+            <p>Indice</p>
+        </div>
+        <div id="contenido">
+            <section class="">
+                <p>Seccion 1</p>
+            </section>
+            <section class="">
+                <p>Seccion 2</p>
+            </section>
+        </div>
     </main>
-        <footer>
-
-        </footer>
+    <footer class="flex">
+        <div>
+            <section class="">
+                <p>Pie de página</p>
+            </section>
+        </div>
+    </footer>
 </body>
 </html>
